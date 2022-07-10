@@ -1,5 +1,5 @@
-import { notificationPopUp } from "./notification.js";
-import { registerServer } from "./serviceWorkerRegister.js";
+import { notificationPopUp } from "/src/notification.js";
+import { registerServer } from "/src/serviceWorkerRegister.js";
 
 registerServer();
 
@@ -15,13 +15,21 @@ async function shortenURL(e) {
     notificationPopUp();
   } else {
     result.innerHTML = `<span class="loader loader-active"></span>`;
-    let data = await fetch(
-      `https://short-link-api.vercel.app/?query=${input.value}`,
-      { cors: true, origin: "*" }
-    );
-    data = await data.json();
-    let url = data["da.gd"];
-    writeData(url);
+    try {
+      let data = await fetch(
+        `https://short-link-api.vercel.app/?query=${input.value}`,
+        {
+          cors: true,
+          origin: "*",
+          "Access-Control-Allow-Origin": "*",
+        }
+      );
+      data = await data.json();
+      let url = data["da.gd"];
+      writeData(url);
+    } catch (error) {
+      result.innerHTML = "ERROR. please try again.";
+    }
   }
 }
 
