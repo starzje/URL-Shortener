@@ -59,14 +59,27 @@ main {
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.4s ease-in-out;
-
-
 }
 
-#button:hover {
+#button:hover,
+#push-button:hover {
   background-color: #362E94;
   color: #fff;
   transform: translateY(-5px);
+}
+
+#push-button {
+  background-color: #3b3b3b;
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.6em 1em;
+  border: 1px solid rgb(22, 22, 22);
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  width: 100%;
+  margin-top: 1em;
 }
 
 .flex-container {
