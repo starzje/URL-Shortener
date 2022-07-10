@@ -1,0 +1,303 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  color: #333;
+  background: linear-gradient(180deg, rgba(249, 249, 249, 1) 0%, rgba(240, 242, 255, 1) 100%);
+  min-height: calc(100vh - 1.5em);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 1.5em auto;
+  padding: 0 7.5em;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#input {
+  position: relative;
+  border-radius: 20px;
+  width: 65%;
+  padding: 0.6em 1em;
+  border: 1px solid rgb(22, 22, 22);
+  font-size: 1rem;
+  transition: all 0.4s ease-in-out;
+}
+
+#input:focus {
+  transform: translateY(-5px);
+}
+
+#input::placeholder {
+  color: rgb(172, 172, 172);
+}
+
+#button {
+  width: 35%;
+  background-color: #807DFB;
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.6em 1em;
+  border: 1px solid rgb(22, 22, 22);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+
+
+}
+
+#button:hover {
+  background-color: #362E94;
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.flex-container {
+  width: 40%;
+}
+
+#output {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  background: linear-gradient(180deg, rgba(54, 46, 148, 1) 0%, rgba(87, 79, 177, 1) 100%);
+  margin-top: 2em;
+  border-radius: 20px;
+  width: 100%;
+  padding: 2.6em 0em;
+  color: #fff;
+}
+
+#output h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+#output a {
+  font-size: 1.1rem;
+  color: #FCBA06;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#output a:hover {
+  text-decoration: underline;
+  color: rgb(165, 177, 255);
+}
+
+
+#form {
+  width: 100%;
+  display: flex;
+  gap: 1.4em;
+}
+
+img {
+  width: 50%;
+}
+
+.github {
+  font-size: 2rem;
+  color: rgba(54, 46, 148, 1);
+  transition: all 0.3s ease-in-out;
+}
+
+.github:hover {
+  color: rgb(165, 177, 255);
+  transform: translateY(-2.5px);
+}
+
+/* --------------------------------SPINER --------------------------------------- */
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 10px solid;
+  border-color: rgba(255, 255, 255, 0.15) rgba(255, 255, 255, 0.25) rgba(255, 255, 255, 0.35) rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  opacity: 0;
+}
+
+.loader-active {
+  opacity: 1;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+  visibility: hidden;
+  /* Hidden by default. Visible on click */
+  min-width: 250px;
+  /* Set a default minimum width */
+  margin-left: -125px;
+  /* Divide value of min-width by 2 */
+  background-color: #333;
+  /* Black background color */
+  color: #fff;
+  /* White text color */
+  text-align: center;
+  /* Centered text */
+  border-radius: 2px;
+  /* Rounded borders */
+  padding: 16px;
+  /* Padding */
+  position: fixed;
+  /* Sit on top of the screen */
+  z-index: 1;
+  /* Add a z-index if needed */
+  left: 50%;
+  /* Center the snackbar */
+  bottom: 30px;
+  /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible;
+  /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+   However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+
+/* -------------------------------------------------MOBILE----------------------------------------------------- */
+
+
+@media screen and (max-width: 60em) {
+
+  .flex-container {
+    width: 100%;
+  }
+
+  .container {
+    padding: 0em 5em;
+  }
+
+  img {
+    width: 75%;
+  }
+
+  main {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 40em) {
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    padding: 0em 1em;
+  }
+
+  #output h3 {
+    font-size: 1rem;
+  }
+
+  #button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  #input {
+    width: 100%;
+  }
+
+  #input::placeholder {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 25em) {
+  #form {
+    flex-direction: column;
+  }
+}

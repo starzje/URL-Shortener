@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="app for shortening your URLs" />
+    <meta name="author" content="Ivan" />
+    <meta name="theme-color" content="#FCBA06" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <title>URL SHORTENER</title>
+    <link rel="apple-touch-icon" href="./img/logo192.png" />
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="./img/logo192.png" />
+    <!-- manifest -->
+    <link rel="manifest" href="manifest.json" />
+    <!-- styles -->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- javascript -->
+    <script src="./src/app.js" type="module"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="./src/style.css" />
+    <!-- font awesome icons -->
+    <script
+      src="https://kit.fontawesome.com/adf56416fe.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>URL SHORTENER</h1>
+        <a target="_blank" href="https://github.com/starzje"
+          ><i class="github fa-brands fa-github"></i
+        ></a>
+      </header>
+      <main>
+        <img src="./img/main.png" alt="Illustration image" />
+        <div class="flex-container">
+          <form id="form">
+            <input
+              type="text"
+              id="input"
+              placeholder="ENTER YOUR URL HERE..."
+            />
+
+            <button id="button">
+              SHORTEN <i class="fa-solid fa-link"></i>
+            </button>
+          </form>
+          <div id="output">
+            <h3>YOUR SHORTENED URL IS:</h3>
+
+            <div id="result">
+              <a target="_blank" href="https://github.com/starzje"
+                >https://your.link/here</a
+              >
+              <div id="snackbar">Are you sure that's the right URL?</div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
