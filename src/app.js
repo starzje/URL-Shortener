@@ -1,7 +1,13 @@
-import { notificationPopUp } from "./notification.js";
-import { registerServer } from "./serviceWorkerRegister.js";
-
-registerServer();
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("/sw.js")
+    .then((registration) => {
+      console.log("Service worker registered: ", registration);
+    })
+    .catch((err) => {
+      console.log("Service worker registration failed: ", err);
+    });
+}
 
 const button = document.querySelector("#button");
 const input = document.querySelector("#input");
@@ -35,4 +41,12 @@ async function shortenURL(e) {
 
 function writeData(url) {
   result.innerHTML = `<a target="_blank"href="${url}">${url}</a>`;
+}
+
+function notificationPopUp() {
+  const x = document.getElementById("snackbar");
+  x.className = "show";
+  setTimeout(function () {
+    x.className = x.className.replace("show", "");
+  }, 3000);
 }
