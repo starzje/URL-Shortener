@@ -1,5 +1,5 @@
-import { notificationPopUp } from "/src/notification.js";
-import { registerServer } from "/src/serviceWorkerRegister.js";
+import { notificationPopUp } from "./src/notification.js";
+import { registerServer } from "./src/serviceWorkerRegister.js";
 
 registerServer();
 
